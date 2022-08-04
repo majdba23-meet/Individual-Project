@@ -67,8 +67,8 @@ def servey():
 		diseases = request.form['diseases']
 		allergy = request.form['allergy']
 		try:
-			user= {'age' : age, 'diseases' : diseases, 'allergy' : allergy, "cart" : {'blood':0}}
-			db.child("Users").child(login_session['user']['localId']).set(user)
+			user= {'age' : age, 'diseases' : diseases, 'allergy' : allergy, "cart" : {'blood bag':0}}
+			db.child("Users").child(login_session['user']['localId']).update(user)
 			return redirect(url_for('shop'))
 		except:
 		   error = "Authentication failed"

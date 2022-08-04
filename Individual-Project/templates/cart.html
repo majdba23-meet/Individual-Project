@@ -5,18 +5,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>cart</title>
+	<link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-	<h1>welcome to the cart ... you can pay and take your products immediately</h1>
-	<h3> have a nice day </h3><br><br>
+
+
+<div class="topnav">
+  <a  href="/shop">shop</a>
+  <a class="active" href="/cart">cart</a>
+  <a href="/pay">pay</a>
+  <input type="text" placeholder="Search..">
+</div>
+
+
+
+
+
+<h1>welcome to the cart ... you can pay and take your products immediately</h1>
+<h3> have a nice day </h3><br><br>
+{% if cart: %}
 {% for i in cart %}
 <li>{{i}} = {{cart[i]}}</li>
 {% endfor %}
-<br><br>
-<button><a href="/pay"> pay </a></button>
-
-
-
+{% endif %}
 
 </body>
 </html>
